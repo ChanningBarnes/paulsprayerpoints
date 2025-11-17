@@ -1,0 +1,179 @@
+.prayer-point-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.prayer-point-container.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.prayer-point-container.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.prayer-point {
+  background: linear-gradient(135deg, #f4e4c1 0%, #e8d5b0 50%, #f4e4c1 100%);
+  border-radius: 8px;
+  padding: 3rem;
+  box-shadow: 
+    0 0 0 1px rgba(139, 90, 43, 0.2),
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 3px double #8b5a2b;
+  min-height: 300px;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.prayer-point::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(139, 90, 43, 0.02) 20px, rgba(139, 90, 43, 0.02) 21px);
+  pointer-events: none;
+}
+
+.prayer-point::after {
+  content: '✦';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #8b5a2b;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.prayer-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  line-height: 1.9;
+  color: #2c1810;
+  margin: 0 0 1.5rem 0;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+.prayer-text::before,
+.prayer-text::after {
+  content: '❝';
+  color: #8b5a2b;
+  opacity: 0.4;
+  font-size: 2rem;
+  position: absolute;
+  font-style: normal;
+}
+
+.prayer-text::before {
+  top: -10px;
+  left: -30px;
+}
+
+.prayer-text::after {
+  content: '❞';
+  bottom: -30px;
+  right: -30px;
+}
+
+.reference-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.bible-reference {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #654321;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.6rem 1.5rem;
+  border-radius: 4px;
+  background: rgba(139, 90, 43, 0.15);
+  border: 1px solid #8b5a2b;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.bible-reference:hover {
+  background: rgba(139, 90, 43, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  border-color: #654321;
+}
+
+.bible-reference:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .prayer-point {
+    padding: 2rem;
+    min-height: 250px;
+  }
+
+  .prayer-text {
+    font-size: 1.25rem;
+  }
+
+  .bible-reference {
+    font-size: 1rem;
+  }
+
+  .prayer-point::before {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .prayer-point {
+    padding: 1.5rem;
+    min-height: 200px;
+  }
+
+  .prayer-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .bible-reference {
+    font-size: 0.95rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .prayer-point::before {
+    font-size: 4rem;
+    top: 5px;
+    left: 10px;
+  }
+}

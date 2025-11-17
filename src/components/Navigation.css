@@ -1,0 +1,145 @@
+.navigation {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-button {
+  background: linear-gradient(135deg, #f4e4c1 0%, #e8d5b0 100%);
+  border: 2px solid #8b5a2b;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  color: #654321;
+}
+
+.nav-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 6px 15px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, #e8d5b0 0%, #f4e4c1 100%);
+  border-color: #654321;
+}
+
+.nav-button:active {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 3px 8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.random-button {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #8b5a2b 0%, #654321 100%);
+  color: #f4e4c1;
+  border-color: #654321;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(212, 165, 116, 0.3);
+}
+
+.random-button:hover {
+  background: linear-gradient(135deg, #654321 0%, #8b5a2b 100%);
+  transform: translateY(-3px) rotate(90deg);
+  color: #fff;
+}
+
+.nav-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.random-button svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Button animations */
+@keyframes pulse {
+  0% {
+    box-shadow: 
+      0 0 0 0 rgba(139, 90, 43, 0.7),
+      0 4px 12px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(212, 165, 116, 0.3);
+  }
+  70% {
+    box-shadow: 
+      0 0 0 10px rgba(139, 90, 43, 0),
+      0 4px 12px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(212, 165, 116, 0.3);
+  }
+  100% {
+    box-shadow: 
+      0 0 0 0 rgba(139, 90, 43, 0),
+      0 4px 12px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(212, 165, 116, 0.3);
+  }
+}
+
+.random-button {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navigation {
+    gap: 1rem;
+  }
+
+  .nav-button {
+    width: 55px;
+    height: 55px;
+  }
+
+  .random-button {
+    width: 65px;
+    height: 65px;
+  }
+
+  .nav-button svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .random-button svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation {
+    gap: 0.8rem;
+  }
+
+  .nav-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .random-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .nav-button svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .random-button svg {
+    width: 24px;
+    height: 24px;
+  }
+}
